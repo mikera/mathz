@@ -1,12 +1,29 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-  <modelVersion>4.0.0</modelVersion>
-  <artifactId>mathz</artifactId>
-  <version>0.0.1-SNAPSHOT</version>
-  <name>mathz</name>
-  <description>Library of maths functions and utilities for Java</description>
-  <parent>
-  	<groupId>net.mikera</groupId>
-  	<artifactId>mikera-pom</artifactId>
-  	<version>0.0.3</version>
-  </parent>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<artifactId>mathz</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<name>mathz</name>
+	<description>Library of maths functions and utilities for Java</description>
+	<parent>
+		<groupId>net.mikera</groupId>
+		<artifactId>mikera-pom</artifactId>
+		<version>0.0.3</version>
+	</parent>
+
+	<url>git@github.com:mikera/${project.artifactId}.git</url>
+
+	<scm>
+		<connection>scm:git:git@github.com:mikera/${project.artifactId}.git</connection>
+		<url>scm:git:git@github.com:mikera/${project.artifactId}.git</url>
+		<developerConnection>scm:git:git@github.com:mikera/${project.artifactId}.git</developerConnection>
+		<tag>HEAD</tag>
+	</scm>
+
+	<licenses>
+		<license>
+			<name>GNU Lesser General Public License (LGPL)</name>
+			<url>http://www.gnu.org/licenses/lgpl.html</url>
+		</license>
+	</licenses>
 </project>
