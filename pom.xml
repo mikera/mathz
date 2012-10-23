@@ -35,4 +35,17 @@
 		</repository>
 	</repositories>
 
+	<dependencies>
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>4.10</version>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>net.mikera</groupId>
+			<artifactId>randomz</artifactId>
+			<version>0.0.2</version>
+		</dependency>
+	</dependencies>
 </project>
