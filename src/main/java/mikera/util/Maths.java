@@ -292,6 +292,12 @@ public final class Maths {
 		return df;
 	}
 	
+	public static double softplus (double a) {
+		if (a>100) return a;
+		if (a<-100) return 0.0;
+		return Math.log(1+Math.exp(a));
+	}
+	
 	public static float tanh (float a) {
 		double ex=Math.exp(2*a);
 		float df=(float)((ex-1)/(ex+1));
