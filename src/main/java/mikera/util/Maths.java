@@ -393,37 +393,42 @@ public final class Maths {
 		return (a==x)?x:x-1;
 	}
 	
+	/** Return the (always non-negative) fractional part of a number */
 	public static float frac(float a) {
 		return a-Maths.floor(a);
 	}
 	
+	/** Return the (always non-negative) fractional part of a number */
 	public static double frac(double a) {
 		return a-Maths.floor(a);
 	}
 	
-	
+	/** Return the integer floor of a double value */	
 	public static int floor(double a) {
 		if (a>=0) return (int)a;
 		int x=(int)a;
 		return (a==x)?x:x-1;
 	}
 
+	/** Return the square of a number */
 	public static int square(byte b) {
 		return b*b;
 	}
 	
-	public static int square(int a) {
-		return a*a;
+	/** Return the square of a number */
+	public static int square(int x) {
+		return x*x;
 	}
 	
-	public static float square(float a) {
-		return a*a;
+	/** Return the square of a number */
+	public static float square(float x) {
+		return x*x;
 	}
 	
-	public static double square(double a) {
-		return a*a;
+	/** Return the square of a number */
+	public static double square(double x) {
+		return x*x;
 	}
-
 	
 	public static int roundUp(double d) {
 		int i=(int) d;
@@ -433,11 +438,7 @@ public final class Maths {
 	public static int roundUp(Number d) {
 		return roundUp(d.doubleValue());
 	}
-	
-	public static int roundUp(float d) {
-		int i=(int) d;
-		return (i==d)?i:(i+1);
-	}
+
 	
 	/**
 	 * Soft maximum function

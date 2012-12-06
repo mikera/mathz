@@ -56,5 +56,15 @@ public class FloatMaths {
 		if (v>max) return max;
 		return v;
 	}
+	
+	/** Round up to next integer */
+	public static int roundUp(float d) {
+		int i=(int) d;
+		return (i==d)?i:(i+1);
+	}
 
+	/** Square function */
+	public static float square(float x) {
+		return x*x;
+	}
 }
