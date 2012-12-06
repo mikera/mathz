@@ -213,24 +213,6 @@ public final class Maths {
 	}
 
 	
-	/** branchless version of abs() */
-	public static int branchlessAbs(final int a) {
-		return (a^(a>>31))-(a>>31);
-	}
-	
-	/** another branchless version of abs() */
-	public static int abs_alternative2(final int a) {
-		int mask=(a>>31);
-		return (a^mask)-mask;
-	}
-	
-	public static int abs_alternative3(final int a) {
-		if (a<0) return -a;
-		return a;
-	}
-	
-
-	
 	public static int min(final int a, final int b) {
 		return (a<b)?a:b;
 	}
