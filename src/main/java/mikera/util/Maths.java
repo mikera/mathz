@@ -388,6 +388,13 @@ public final class Maths {
 	}
 	
 	/** Bound a value within a given range */
+	public static final float bound(float v, float min, float max) {
+		if (v<min) return min;
+		if (v>max) return max;
+		return v;
+	}
+	
+	/** Bound a value within a given range */
 	public static final int bound(int v, int min, int max) {
 		if (v<min) return min;
 		if (v>max) return max;
