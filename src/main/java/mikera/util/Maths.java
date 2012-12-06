@@ -350,15 +350,9 @@ public final class Maths {
 	
 	/** Return the (always non-negative) fractional part of a number */
 	public static double frac(double a) {
-		return a-Maths.floor(a);
+		return a-Math.floor(a);
 	}
-	
-	/** Return the integer floor of a double value */	
-	public static int floor(double a) {
-		if (a>=0) return (int)a;
-		int x=(int)a;
-		return (a==x)?x:x-1;
-	}
+
 
 	/** Return the square of a number */
 	public static int square(byte b) {
@@ -386,6 +380,8 @@ public final class Maths {
 		return (i==d)?i:(i+1);
 	}
 	
+	
+	
 	/** Round up to next integer */
 	public static int roundUp(Number d) {
 		return roundUp(d.doubleValue());
@@ -397,6 +393,12 @@ public final class Maths {
 		return (i==d)?i:(i+1);
 	}
 
+	/** Rounds down (integer floor) of a double value */	
+	public static int roundDown(double a) {
+		if (a>=0) return (int)a;
+		int x=(int)a;
+		return (a==x)?x:x-1;
+	}
 	
 	/**
 	 * Soft maximum function
