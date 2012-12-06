@@ -69,6 +69,12 @@ public class TestMaths {
 		
 	}
 	
+	@Test public void testDoubleMod() {
+		assertEquals(2.0,Maths.mod(2.0, 5.0),0.00001);
+		assertEquals(2.0,Maths.mod(-3.0, 5.0),0.00001);
+		assertEquals(0.0,Maths.mod(10.0, 5.0),0.00001);
+	}
+	
 	@Test public void testAbs() {
 		assertEquals(0.0f,Maths.abs(0.0f),0.00001f);
 	}

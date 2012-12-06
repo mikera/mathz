@@ -484,4 +484,17 @@ public final class Maths {
 		return (d<-EPSILON)||(d>EPSILON);
 	}
 	
+
+	public static double mod(double num, double div) {
+		double result=num%div;
+		if (result<0) result+=div;
+		return result;
+	}
+	
+	public static double triangleWave(double a) {
+		a-=Math.floor(a);
+		return (a<0.5)?a*2:(2-a*2);
+	}
+
+	
 }
