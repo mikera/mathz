@@ -492,19 +492,21 @@ public final class Maths {
 	    return x * x * (3 - (2 * x));		
 	}
 	
-
+    /** Bound a value within a given range */
 	public static final float bound(float min, float v, float max) {
 		if (v<min) return min;
 		if (v>max) return max;
 		return v;
 	}
 	
+	/** Bound a value within a given range */
 	public static final double bound(double min, double v, double max) {
 		if (v<min) return min;
 		if (v>max) return max;
 		return v;
 	}
 	
+	/** Bound a value within a given range */
 	public static final int bound(int min, int v, int max) {
 		if (v<min) return min;
 		if (v>max) return max;
