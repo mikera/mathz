@@ -134,7 +134,7 @@ public class TestMaths {
 	
 	@Test public void testSpeed2() {
 		for (int i=0; i<100000; i++) {
-			float f=Maths.alternateSqrt(i);
+			float f=FloatMaths.alternateSqrt(i);
 			assertEquals(f,f,0.01f);
 		}
 	}

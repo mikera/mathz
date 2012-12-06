@@ -67,4 +67,26 @@ public class FloatMaths {
 	public static float square(float x) {
 		return x*x;
 	}
+	
+	/**
+	 * Interesting way to approximate a square root.... however seems to be slower than standard Math.sqrt() approach
+	 * @param x
+	 * @return
+	 */
+	public static float alternateSqrt(float x) {
+		if (x<0) return 0;
+		float r=approxSqrt(x);
+		r=r-(0.5f*((r*r)-x)/r); // Newton iteration
+		r=r-(0.5f*((r*r)-x)/r); // Newton iteration
+		return r;
+	}
+	
+	/** Fast approximate square root */
+	public static float approxSqrt(float x) {
+	    int i = Float.floatToRawIntBits(x);
+	    //int exponent=i&0x7F800000; // 8 bits below sign bit
+	    //int value=(i&0x7FFFFFF)+((exponent!=0)?0:0x08000000); // 23 low bits, implicit 1 unless exponent=0
+	    i=(i+0x3F800000)>>>1;
+	    return Float.intBitsToFloat(i);
+	}
 }
