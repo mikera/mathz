@@ -449,7 +449,7 @@ public final class Maths {
 	}
 	
 	/** Bound a value within a given range */
-	public static final double bound(double min, double v, double max) {
+	public static final double bound(double v, double min, double max) {
 		if (v<min) return min;
 		if (v>max) return max;
 		return v;

@@ -45,13 +45,13 @@ public class FloatMaths {
 	        return 0;
 	    if (x >= b)
 	        return 1;
-	    float t = bound(0.0f, (x - a) / (b - a), 1.0f);
+	    float t = bound((x - a) / (b - a), 0.0f, 1.0f);
 	    return t * t * (3 - 2 * t);
 	}
 	
 
     /** Bound a value within a given range */
-	public static final float bound(float min, float v, float max) {
+	public static final float bound(float v, float min, float max) {
 		if (v<min) return min;
 		if (v>max) return max;
 		return v;
