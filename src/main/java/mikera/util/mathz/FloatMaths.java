@@ -51,7 +51,7 @@ public final class FloatMaths {
 	/** Mod function implemented for float values */
 	public static float mod(float n, float d) {
 		float x=n/d;
-		return n- (Maths.floor(x)*d);
+		return n- (Maths.roundDown(x)*d);
 	}
 
 

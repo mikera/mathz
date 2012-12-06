@@ -305,16 +305,11 @@ public final class Maths {
 	}
 	
 
-	
-	public static int floor(float a) {
-		if (a>=0) return (int)a;
-		int x=(int)a;
-		return (a==x)?x:x-1;
-	}
+
 	
 	/** Return the (always non-negative) fractional part of a number */
 	public static float frac(float a) {
-		return a-Maths.floor(a);
+		return a-roundDown(a);
 	}
 	
 	/** Return the (always non-negative) fractional part of a number */
@@ -364,6 +359,13 @@ public final class Maths {
 
 	/** Rounds down (integer floor) of a double value */	
 	public static int roundDown(double a) {
+		if (a>=0) return (int)a;
+		int x=(int)a;
+		return (a==x)?x:x-1;
+	}
+	
+	/** Round down to next smallest integer (towards negative infinity) */
+	public static int roundDown(float a) {
 		if (a>=0) return (int)a;
 		int x=(int)a;
 		return (a==x)?x:x-1;

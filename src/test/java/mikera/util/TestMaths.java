@@ -91,13 +91,17 @@ public class TestMaths {
 
 	
 	@Test public void testFloor() {
-		assertEquals(0,Maths.floor(0));
-		assertEquals(1,Maths.floor(1));
-		assertEquals(-1,Maths.floor(-1));
+		assertEquals(0,Maths.roundDown(0));
+		assertEquals(1,Maths.roundDown(1));
+		assertEquals(-1,Maths.roundDown(-1));
 		assertEquals(1,Maths.roundDown(1.2));
 		assertEquals(-1,Maths.roundDown(-0.0001));
 		assertEquals(-1,Maths.roundDown(-0.9001));
 		
+		assertEquals(0,Maths.roundDown(0.1f));
+		assertEquals(1,Maths.roundDown(1.3f));
+		assertEquals(-1,Maths.roundDown(-0.1f));
+
 	}
 	
 	@Test public void testSpeed1() {
