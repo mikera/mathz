@@ -9,20 +9,20 @@ package mikera.util;
  *
  */
 public final class Maths {
-	public static final float ROOT_TWO=(float)Math.sqrt(2);
-	public static final float ROOT_THREE=(float)Math.sqrt(3);
+	public static final double ROOT_TWO=(float)Math.sqrt(2);
+	public static final double ROOT_THREE=(float)Math.sqrt(3);
 	
 	/** mathematical constant e */
-	public static final float E=(float)Math.exp(1);
+	public static final double E=java.lang.Math.E;
 	
 	/** Mathematical constant Pi = 3.1415926... */
-	public static final float PI=(float)Math.PI;
-	public static final float TWO_PI=2.0f*PI;
+	public static final double PI=(float)Math.PI;
+	public static final double TWO_PI=2.0*PI;
 
 	/** Mathematical constant Tau = 2 * Pi */
-	public static final float TAU=TWO_PI;
-	public static final float HALF_PI=0.5f*PI;
-	public static final float QUARTER_PI=0.25f*PI;
+	public static final double TAU=TWO_PI;
+	public static final double HALF_PI=0.5*PI;
+	public static final double QUARTER_PI=0.25*PI;
 	private static final double EPSILON = 0.00001;
 	
 	public static float sqrt(float a) {
@@ -378,12 +378,12 @@ public final class Maths {
 	}
 
 	public static float sin(float a) {
-		a = a % Maths.TWO_PI;
+		a =  a % ((float) Maths.TWO_PI);
 		return (float)Math.sin(a);
 	}
 	
 	public static float cos(float a) {
-		a = a % Maths.TWO_PI;
+		a =  a % ((float) Maths.TWO_PI);
 		return (float)Math.cos(a);
 	}
 	
