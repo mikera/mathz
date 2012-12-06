@@ -32,16 +32,7 @@ public final class Maths {
 	public static double sqrt(double a) {
 		return Math.sqrt(a);
 	}
-	
-	/** Fast inverse square root on floats - amusing hack used in Quake */
-	public static float fastInverseSqrt(float x) {
-	    float xhalf = 0.5f*x;
-	    int i = Float.floatToRawIntBits(x);
-	    i = 0x5F3759DF - (i>>1);
-	    x = Float.intBitsToFloat(i);
-	    x = x*(1.5f - xhalf*x*x);
-	    return x;
-	}
+
 	
 
 	
@@ -256,24 +247,27 @@ public final class Maths {
 		return (a>b)?a:b;
 	}
 	
-	// branchless min
+	/** branchless min for ints */
 	public static int min2(int a, int b) {
 		return a^((a^b) & ((b-a)>>31));
 	}
 	
-	// branchless max
+	/** branchless max for ints */
 	public static int max2(int a, int b) {
 		return a^((a^b) & ((a-b)>>31));
 	}
 	
+	/** Return the minimum of two numbers */
 	public static float min(float a, float b) {
 		return (a<b)?a:b;
 	}
 	
+	/** Return the maximum of two numbers */
 	public static float max(float a, float b) {
 		return (a>b)?a:b;
 	}
 	
+	/** Return the minimum of three numbers */
 	public static int min(int a, int b, int c) {
 		int result=a;
 		if (b<result) result=b;
@@ -281,6 +275,7 @@ public final class Maths {
 		return result;
 	}
 	
+	/** Return the maximum of three numbers */
 	public static int max(int a, int b, int c) {
 		int result=a;
 		if (b>result) result=b;
@@ -411,13 +406,21 @@ public final class Maths {
 		return x*x;
 	}
 	
+	/** Round up to next integer */
 	public static int roundUp(double d) {
 		int i=(int) d;
 		return (i==d)?i:(i+1);
 	}
 	
+	/** Round up to next integer */
 	public static int roundUp(Number d) {
 		return roundUp(d.doubleValue());
+	}
+	
+	/** Round up to next integer */
+	public static int roundUp(float d) {
+		int i=(int) d;
+		return (i==d)?i:(i+1);
 	}
 
 	

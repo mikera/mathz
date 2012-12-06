@@ -109,11 +109,7 @@ public class TestMaths {
 		}
 	}
 	
-	@Test public void testFastSqrt() {
-		assertEquals(0.5,Maths.fastInverseSqrt(4),0.01f);
-		
-		// System.out.println(Maths.alternateSqrt(33f)+" vs."+Maths.sqrt(33f));
-	}
+
 	
 	@Test public void testFloor() {
 		assertEquals(0,Maths.floor(0));

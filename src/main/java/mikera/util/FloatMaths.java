@@ -1,6 +1,12 @@
 package mikera.util;
 
-public class FloatMaths {
+/**
+ * Static class for specialised maths functions that return floats
+ * 
+ * @author Mike
+ *
+ */
+public final class FloatMaths {
 	
 	/** Float round to a specified number of decimal places */
 	public static float round(float f, int dp) {
@@ -57,11 +63,7 @@ public class FloatMaths {
 		return v;
 	}
 	
-	/** Round up to next integer */
-	public static int roundUp(float d) {
-		int i=(int) d;
-		return (i==d)?i:(i+1);
-	}
+
 
 	/** Square function */
 	public static float square(float x) {
@@ -88,5 +90,16 @@ public class FloatMaths {
 	    //int value=(i&0x7FFFFFF)+((exponent!=0)?0:0x08000000); // 23 low bits, implicit 1 unless exponent=0
 	    i=(i+0x3F800000)>>>1;
 	    return Float.intBitsToFloat(i);
+	}
+	
+	
+	/** Fast inverse square root on floats - amusing hack used in Quake */
+	public static float fastInverseSqrt(float x) {
+	    float xhalf = 0.5f*x;
+	    int i = Float.floatToRawIntBits(x);
+	    i = 0x5F3759DF - (i>>1);
+	    x = Float.intBitsToFloat(i);
+	    x = x*(1.5f - xhalf*x*x);
+	    return x;
 	}
 }
