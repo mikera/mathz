@@ -124,13 +124,7 @@ public final class Maths {
 		return (a>>31)+((a>0)?1:0);
 	}
 	
-	/** 
-	 * Fast branchless integer sign 
-	 * Not correct for MIN_INTEGER - but valid for all other int values
-	 */
-	public static int sign2fast(int a) {
-		return 1+(a>>31)+((a-1)>>31);
-	}
+
 	
 	/** Return the sign of a long value */
 	public static int sign(long a) {
@@ -212,24 +206,17 @@ public final class Maths {
 	    return result;
 	}
 
-	
+	/** Return the minimum of two numbers */
 	public static int min(final int a, final int b) {
+		// oddly, this seems to outperform java.lang.Math.min by about 10% on caliper tests.....
 		return (a<b)?a:b;
 	}
 	
+	/** Return the maximum of two numbers */
 	public static int max(final int a, final int b) {
 		return (a>b)?a:b;
 	}
 	
-	/** branchless min for ints */
-	public static int min2(int a, int b) {
-		return a^((a^b) & ((b-a)>>31));
-	}
-	
-	/** branchless max for ints */
-	public static int max2(int a, int b) {
-		return a^((a^b) & ((a-b)>>31));
-	}
 	
 	/** Return the minimum of two numbers */
 	public static float min(float a, float b) {

@@ -81,8 +81,8 @@ public class TestMaths {
 			
 			assertEquals(Math.min(a,b),Maths.min(a,b));
 			assertEquals(Math.max(a,b),Maths.max(a,b));
-			assertEquals(Math.min(a,b),Maths.min2(a,b));
-			assertEquals(Math.max(a,b),Maths.max2(a,b));
+			assertEquals(Math.min(a,b),AlternativeMaths.min2(a,b));
+			assertEquals(Math.max(a,b),AlternativeMaths.max2(a,b));
 		}
 	}
 	

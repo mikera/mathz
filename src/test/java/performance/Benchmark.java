@@ -1,24 +1,28 @@
 package performance;
 
 import mikera.util.FloatMaths;
+import mikera.util.Maths;
 
 import com.google.caliper.Runner;
 import com.google.caliper.SimpleBenchmark;
 
 public class Benchmark extends SimpleBenchmark {
+	double r=0;
 	
-	@SuppressWarnings("unused")
-	public void timeFloatCos(int reps) {
+	public void timeMikeraMin(int reps) {
+		double c=0;
 		for (int i=0; i<reps; i++) {
-			float c=FloatMaths.cos(2.3f);
+			c+=Maths.min(i,100);
 		}
+		r=c;
 	}
 	
-	@SuppressWarnings("unused")
-	public void timeDoubleCos(int reps) {
+	public void timeJavaMin(int reps) {
+		double c=0;
 		for (int i=0; i<reps; i++) {
-			double c=Math.cos(2.5);
+			c+=Math.min(i,100);
 		}
+		r=c;
 	}
 	
 	/**
