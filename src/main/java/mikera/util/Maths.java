@@ -214,7 +214,7 @@ public final class Maths {
 
 	
 	/** branchless version of abs() */
-	public static int abs(final int a) {
+	public static int branchlessAbs(final int a) {
 		return (a^(a>>31))-(a>>31);
 	}
 	
@@ -338,25 +338,7 @@ public final class Maths {
 		return 1-sa*sa;
 	}
 	
-	public static float sin(double a) {
-		a = a % Maths.TWO_PI;
-		return (float)Math.sin(a);
-	}
-	
-	public static float cos(double a) {
-		a = a % Maths.TWO_PI;
-		return (float)Math.cos(a);
-	}
 
-	public static float sin(float a) {
-		a =  a % ((float) Maths.TWO_PI);
-		return (float)Math.sin(a);
-	}
-	
-	public static float cos(float a) {
-		a =  a % ((float) Maths.TWO_PI);
-		return (float)Math.cos(a);
-	}
 	
 	public static int floor(float a) {
 		if (a>=0) return (int)a;

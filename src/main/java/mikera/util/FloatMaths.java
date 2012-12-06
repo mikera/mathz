@@ -109,4 +109,24 @@ public final class FloatMaths {
 	    x = x*(1.5f - xhalf*x*x);
 	    return x;
 	}
+	
+	public static float sin(double a) {
+		a = a % Maths.TWO_PI;
+		return (float)Math.sin(a);
+	}
+	
+	public static float cos(double a) {
+		a = a % Maths.TWO_PI;
+		return (float)Math.cos(a);
+	}
+
+	public static float sin(float a) {
+		a =  a % ((float) Maths.TWO_PI);
+		return (float)Math.sin(a);
+	}
+	
+	public static float cos(float a) {
+		a =  a % ((float) Maths.TWO_PI);
+		return (float)Math.cos(a);
+	}
 }

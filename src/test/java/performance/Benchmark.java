@@ -1,5 +1,6 @@
 package performance;
 
+import mikera.util.FloatMaths;
 import mikera.util.Maths;
 
 import com.google.caliper.Runner;
@@ -10,7 +11,7 @@ public class Benchmark extends SimpleBenchmark {
 	@SuppressWarnings("unused")
 	public void timeFloatCos(int reps) {
 		for (int i=0; i<reps; i++) {
-			float c=Maths.cos(2.3f);
+			float c=FloatMaths.cos(2.3f);
 		}
 	}
 	
