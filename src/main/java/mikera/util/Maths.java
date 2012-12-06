@@ -482,12 +482,14 @@ public final class Maths {
 	    return t * t * (3 - 2 * t);
 	}
 	
+	/** Linear interpolation between a and b */
 	public static final float lerp(float t,float a, float b) {
 	    return (1-t) * a + t*b;		
 	}
 	
-	public static final float smoothFactor(float t) {
-	    return t * t * (3 - 2 * t);		
+	/** Smooth factor function for linear interpolation, with dy/dx=0 at x=0 and x=1 */
+	public static final float smoothFactor(float x) {
+	    return x * x * (3 - (2 * x));		
 	}
 	
 
