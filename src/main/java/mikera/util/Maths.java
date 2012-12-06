@@ -388,7 +388,7 @@ public final class Maths {
 	}
 	
 	/** Bound a value within a given range */
-	public static final int bound(int min, int v, int max) {
+	public static final int bound(int v, int min, int max) {
 		if (v<min) return min;
 		if (v>max) return max;
 		return v;
