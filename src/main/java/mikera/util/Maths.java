@@ -447,11 +447,6 @@ public final class Maths {
 		double min=Math.min(x, y);
 		return max+Math.log(1.0+Math.exp(max-min));
 	}
-
-
-
-	
-	
 	
 	/** Bound a value within a given range */
 	public static final double bound(double min, double v, double max) {
@@ -467,17 +462,19 @@ public final class Maths {
 		return v;
 	}
 
+	/** Tests whether a value is near zero, to a default tolerance level */
 	public static boolean notNearZero(double d) {
 		return (d<-EPSILON)||(d>EPSILON);
 	}
 	
-
+    /** Double mod functions */
 	public static double mod(double num, double div) {
 		double result=num%div;
 		if (result<0) result+=div;
 		return result;
 	}
 	
+    /** Triangle wave with wavelength 1.0, and range 0.0 - 1.0 */
 	public static double triangleWave(double a) {
 		a-=Math.floor(a);
 		return (a<0.5)?a*2:(2-a*2);
