@@ -406,7 +406,7 @@ public final class Maths {
 		return (d<-EPSILON)||(d>EPSILON);
 	}
 	
-    /** Double mod function */
+    /** Double mod function with fractional divisor */
 	public static double mod(double num, double div) {
 		double result=num%div;
 		if (result<0) result+=div;

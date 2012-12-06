@@ -116,21 +116,25 @@ public final class FloatMaths {
 	    return x;
 	}
 	
+	/** Float-returning version of Math.sin */
 	public static float sin(double a) {
 		a = a % Maths.TWO_PI;
 		return (float)Math.sin(a);
 	}
 	
+	/** Float-returning version of Math.cos */
 	public static float cos(double a) {
 		a = a % Maths.TWO_PI;
 		return (float)Math.cos(a);
 	}
 
+	/** Float-returning version of Math.sin */
 	public static float sin(float a) {
 		a =  a % ((float) Maths.TWO_PI);
 		return (float)Math.sin(a);
 	}
 	
+	/** Float-returning version of Math.cos */
 	public static float cos(float a) {
 		a =  a % ((float) Maths.TWO_PI);
 		return (float)Math.cos(a);
