@@ -13,18 +13,7 @@ public class TestMaths {
 		assertEquals(20,Maths.bound(0,100,20));
 	}
 	
-	@Test public void testMod() {
-		assertEquals(0.2f,Maths.fmod(1.2f, 1.0f),0.00001f);
-		assertEquals(0.2f,Maths.fmod(-0.8f, 1.0f),0.00001f);
 
-		assertEquals(0.2f,Maths.fmod(1.6f, 1.4f),0.00001f);
-		assertEquals(0.0f,Maths.fmod(1.6f, 1.6f),0.00001f);
-
-		
-		assertEquals(2.0f,Maths.fmod(-8f, 10.0f),0.00001f);
-
-		
-	}
 	
 	@Test public void testTanh() {
 		assertEquals(1.0f,Maths.tanh(1000000),0.001f);

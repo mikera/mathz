@@ -44,6 +44,13 @@ public final class FloatMaths {
 	public static final float smoothFactor(float x) {
 	    return x * x * (3 - (2 * x));		
 	}
+	
+	
+	/** Mod function implemented for float values */
+	public static float mod(float n, float d) {
+		float x=n/d;
+		return n- (Maths.floor(x)*d);
+	}
 
 
 	public static final float smoothStep(float a, float b, float x) {
