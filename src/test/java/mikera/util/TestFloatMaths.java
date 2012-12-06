@@ -2,6 +2,8 @@ package mikera.util;
 
 import static org.junit.Assert.assertEquals;
 
+import mikera.util.mathz.FloatMaths;
+
 import org.junit.Test;
 
 public class TestFloatMaths {

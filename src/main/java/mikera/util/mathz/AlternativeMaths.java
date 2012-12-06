@@ -1,4 +1,4 @@
-package mikera.util;
+package mikera.util.mathz;
 
 /**
  * Mostly experimental. Alternative implementation sof maths functions.

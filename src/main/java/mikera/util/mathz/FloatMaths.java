@@ -1,4 +1,6 @@
-package mikera.util;
+package mikera.util.mathz;
+
+import mikera.util.Maths;
 
 /**
  * Static class for specialised maths functions that return floats

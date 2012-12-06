@@ -1,4 +1,4 @@
-package mikera.util;
+package mikera.util.mathz;
 
 @SuppressWarnings("serial")
 public class MathsException extends RuntimeException {

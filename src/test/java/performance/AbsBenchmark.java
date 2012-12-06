@@ -1,6 +1,6 @@
 package performance;
 
-import mikera.util.FloatMaths;
+import mikera.util.mathz.FloatMaths;
 
 import com.google.caliper.Runner;
 import com.google.caliper.SimpleBenchmark;
