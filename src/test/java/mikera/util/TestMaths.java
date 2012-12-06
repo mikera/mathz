@@ -82,8 +82,8 @@ public class TestMaths {
 	@Test public void testIntAbs() {
 		for (int i=-100; i<100; i++) {
 			assertEquals(Math.abs(i),Maths.abs(i));
-			assertEquals(Math.abs(i),Maths.abs2(i));
-			assertEquals(Math.abs(i),Maths.abs3(i));
+			assertEquals(Math.abs(i),Maths.abs_alternative2(i));
+			assertEquals(Math.abs(i),Maths.abs_alternative3(i));
 		}
 	}
 	

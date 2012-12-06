@@ -11,9 +11,15 @@ package mikera.util;
 public final class Maths {
 	public static final float ROOT_TWO=(float)Math.sqrt(2);
 	public static final float ROOT_THREE=(float)Math.sqrt(3);
+	
+	/** mathematical constant e */
 	public static final float E=(float)Math.exp(1);
+	
+	/** Mathematical constant Pi = 3.1415926... */
 	public static final float PI=(float)Math.PI;
 	public static final float TWO_PI=2.0f*PI;
+
+	/** Mathematical constant Tau = 2 * Pi */
 	public static final float TAU=TWO_PI;
 	public static final float HALF_PI=0.5f*PI;
 	public static final float QUARTER_PI=0.25f*PI;
@@ -27,6 +33,7 @@ public final class Maths {
 		return Math.sqrt(a);
 	}
 	
+	/** Fast inverse square root on floats - amusing hack used in Quake */
 	public static float fastInverseSqrt(float x) {
 	    float xhalf = 0.5f*x;
 	    int i = Float.floatToRawIntBits(x);
@@ -57,6 +64,9 @@ public final class Maths {
 	    return Float.intBitsToFloat(i);
 	}
 	
+	/**
+	 * Clamp a double value to an integer range
+	 */
 	public static int clampToInteger(double value, int min, int max) {
 		int v=(int)value;
 		if (v<min) return min;
@@ -64,6 +74,9 @@ public final class Maths {
 		return v;
 	}
 	
+	/**
+	 * Clamp a float value to an integer range
+	 */
 	public static int clampToInteger(float value, int min, int max) {
 		int v=(int)value;
 		if (v<min) return min;
@@ -107,19 +120,25 @@ public final class Maths {
 		return (b<c)?c:b;
 	}
 	
+	/**
+	 * Return the sign of a double value
+	 */
 	public static int sign(double a) {
 		if (a==0.0) return 0;
 		return (a>0)?1:-1;
 	}
-	
+
+	/**
+	 * Return the sign of a float value
+	 */
 	public static int sign(float a) {
 		if (a==0.0f) return 0;
 		return (a>0)?1:-1;
 	}
 	
-
-
-	
+	/**
+	 * Return the sign of an int value
+	 */
 	public static final int sign(int a) {
 		return (a==0) ? 0 : ( (a>0)?1:-1 );
 	}
@@ -133,17 +152,21 @@ public final class Maths {
 		return (a>>31)+((a>0)?1:0);
 	}
 	
-	// branchless integer sign - however incorrect for MIN_INTEGER
+	/** 
+	 * Fast branchless integer sign 
+	 * Not correct for MIN_INTEGER - but valid for all other int values
+	 */
 	public static int sign2fast(int a) {
 		return 1+(a>>31)+((a-1)>>31);
 	}
 	
-	
+	/** Return the sign of a long value */
 	public static int sign(long a) {
 		if (a==0) return 0;
 		return (a>0)?1:-1;
 	}
 	
+	/** Mod function implemented for float values */
 	public static float fmod(float n, float d) {
 		float x=n/d;
 		return n-floor(x)*d;
@@ -172,6 +195,7 @@ public final class Maths {
 		return ((base+increase)/boundary)-(base/boundary);
 	}
 	
+	/** Return the minimum of three values */
 	public static double min(double a, double b, double c) {
 		double result=a;
 		if (b<result) result=b;
@@ -179,6 +203,7 @@ public final class Maths {
 		return result;
 	}
 	
+	/** Return the maximum of three values */
 	public static double max(double a, double b, double c) {
 		double result=a;
 		if (b>result) result=b;
@@ -186,6 +211,7 @@ public final class Maths {
 		return result;
 	}
 	
+	/** Return the minimum of three values */	
 	public static float min(float a, float b, float c) {
 		float result=a;
 		if (b<result) result=b;
@@ -193,6 +219,7 @@ public final class Maths {
 		return result;
 	}
 	
+	/** Return the maximum of three values */
 	public static float max(float a, float b, float c) {
 		float result=a;
 		if (b>result) result=b;
@@ -200,6 +227,7 @@ public final class Maths {
 		return result;
 	}
 	
+	/** Return the minimum of four values */	
 	public static final float min(float a, float b, float c, float d) {
 	    float result=a;
 		if (result > b) result = b;
@@ -208,6 +236,7 @@ public final class Maths {
 	    return result;
 	}
 
+	/** Return the maximum of four values */	
 	public static final float max(float a, float b, float c, float d) {
 		float result=a;
 		if (result < b) result = b;
@@ -217,18 +246,18 @@ public final class Maths {
 	}
 
 	
-	// branchless version of abs()
+	/** branchless version of abs() */
 	public static int abs(final int a) {
 		return (a^(a>>31))-(a>>31);
 	}
 	
-	// another branchless version of abs()
-	public static int abs2(final int a) {
+	/** another branchless version of abs() */
+	public static int abs_alternative2(final int a) {
 		int mask=(a>>31);
 		return (a^mask)-mask;
 	}
 	
-	public static int abs3(final int a) {
+	public static int abs_alternative3(final int a) {
 		if (a<0) return -a;
 		return a;
 	}
