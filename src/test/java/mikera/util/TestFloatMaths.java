@@ -23,4 +23,8 @@ public class TestFloatMaths {
 
 		
 	}
+	
+	@Test public void testAbs() {
+		assertEquals(0.0f,FloatMaths.abs(0.0f),0.00001f);
+	}
 }

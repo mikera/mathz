@@ -70,7 +70,11 @@ public final class FloatMaths {
 		return v;
 	}
 	
-
+	/** float abs function */
+	public static float abs(final float a) {
+		if (a<0) return -a;
+		return a;
+	}
 
 	/** Square function */
 	public static float square(float x) {

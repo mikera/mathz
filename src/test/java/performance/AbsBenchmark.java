@@ -1,5 +1,6 @@
 package performance;
 
+import mikera.util.FloatMaths;
 import mikera.util.Maths;
 
 import com.google.caliper.Runner;
@@ -11,7 +12,7 @@ public class AbsBenchmark extends SimpleBenchmark {
 	public void timeMikeraMathsFloatAbs(int reps) {
 		float c=0;
 		for (int i=0; i<reps; i++) {
-			c+=Maths.abs((float)i);
+			c+=FloatMaths.abs(i);
 		}
 		r=c;
 	}
@@ -20,22 +21,6 @@ public class AbsBenchmark extends SimpleBenchmark {
 		float c=0;
 		for (int i=0; i<reps; i++) {
 			c+=java.lang.Math.abs((float)i);
-		}
-		r=c;
-	}
-	
-	public void timeMikeraMathsIntAbs(int reps) {
-		float c=0;
-		for (int i=0; i<reps; i++) {
-			c+=Maths.abs(i);
-		}
-		r=c;
-	}
-	
-	public void timeJavaMathsIntAbs(int reps) {
-		float c=0;
-		for (int i=0; i<reps; i++) {
-			c+=java.lang.Math.abs(i);
 		}
 		r=c;
 	}

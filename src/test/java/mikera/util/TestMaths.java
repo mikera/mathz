@@ -64,13 +64,10 @@ public class TestMaths {
 		assertEquals(0.0,Maths.mod(10.0, 5.0),0.00001);
 	}
 	
-	@Test public void testAbs() {
-		assertEquals(0.0f,Maths.abs(0.0f),0.00001f);
-	}
+
 	
 	@Test public void testIntAbs() {
 		for (int i=-100; i<100; i++) {
-			assertEquals(Math.abs(i),Maths.abs(i));
 			assertEquals(Math.abs(i),Maths.abs_alternative2(i));
 			assertEquals(Math.abs(i),Maths.abs_alternative3(i));
 		}

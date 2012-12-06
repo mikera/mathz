@@ -229,10 +229,7 @@ public final class Maths {
 		return a;
 	}
 	
-	public static float abs(final float a) {
-		if (a<0) return -a;
-		return a;
-	}
+
 	
 	public static int min(final int a, final int b) {
 		return (a<b)?a:b;
