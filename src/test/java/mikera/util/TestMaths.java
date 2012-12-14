@@ -15,7 +15,16 @@ public class TestMaths {
 		assertEquals(20,Maths.bound(100,0,20));
 	}
 	
-
+	@Test public void testModPower32Bit() {
+		assertEquals(13,Maths.modPower32Bit(13,1));
+		assertEquals(169,Maths.modPower32Bit(13,2));
+		assertEquals(100000,Maths.modPower32Bit(10,5));
+		assertEquals(-1,Maths.modPower32Bit(-1,105));
+		assertEquals(0,Maths.modPower32Bit(0,435435));
+		assertEquals(1,Maths.modPower32Bit(435435,0));
+		assertEquals(0,Maths.modPower32Bit(2,32));
+		assertEquals(0,Maths.modPower32Bit(2,320));
+	}
 	
 	@Test public void testTanh() {
 		assertEquals(1.0f,Maths.tanh(1000000),0.001f);

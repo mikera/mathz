@@ -400,6 +400,20 @@ public final class Maths {
 		if (v>max) return max;
 		return v;
 	}
+	
+	/**
+	 * Returns (x^pow) mod (2^32) as an int
+	 */
+	public static int modPower32Bit(int x, int pow) {
+		int result=1;
+		for (int n = pow; n > 0; n >>>= 1) {
+			if ((n & 1) != 0) {
+				result *= x;
+			}
+			x *= x;
+		}
+		return result;
+	}
 
 	/** Tests whether a value is near zero, to a default tolerance level */
 	public static boolean notNearZero(double d) {
