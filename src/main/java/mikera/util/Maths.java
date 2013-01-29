@@ -56,6 +56,12 @@ public final class Maths {
 		return v;
 	}
 	
+
+	/** Linear interpolation between a and b */
+	public static final double lerp(double t,double a, double b) {
+	    return (1-t) * a + t*b;		
+	}
+	
 	/**
 	 * Return the middle value of 3 numbers
 	 * 
