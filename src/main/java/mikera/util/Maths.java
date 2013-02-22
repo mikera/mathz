@@ -98,17 +98,17 @@ public final class Maths {
 	/**
 	 * Return the sign of a double value
 	 */
-	public static int sign(double a) {
-		if (a==0.0) return 0;
-		return (a>0)?1:-1;
+	public static int sign(double x) {
+		if (x==0.0) return 0;
+		return (x>0)?1:-1;
 	}
 
 	/**
 	 * Return the sign of a float value
 	 */
-	public static int sign(float a) {
-		if (a==0.0f) return 0;
-		return (a>0)?1:-1;
+	public static int sign(float x) {
+		if (x==0.0f) return 0;
+		return (x>0)?1:-1;
 	}
 	
 	/**
@@ -247,74 +247,89 @@ public final class Maths {
 		return result;
 	}
 	
-	public static float sigmoid (float a) {
-		double ea=Math.exp(-a);
+	public static float sigmoid (float x) {
+		double ea=Math.exp(-x);
 		float df=(float)(1/(1.0f+ea));
-		if (Float.isNaN(df)) return (a>0)?1:0;
+		if (Float.isNaN(df)) return (x>0)?1:0;
 		return df;
 	}
 	
-	public static double sigmoid (double a) {
-		double ea=Math.exp(-a);
+	public static double sigmoid (double x) {
+		return logistic(x);
+	}
+	
+	public static double logistic (double x) {
+		double ea=Math.exp(-x);
 		double df=(1/(1.0f+ea));
-		if (Double.isNaN(df)) return (a>0)?1:0;
+		if (Double.isNaN(df)) return (x>0)?1:0;
 		return df;
 	}
 	
-	public static double softplus (double a) {
-		if (a>100) return a;
-		if (a<-100) return 0.0;
-		return Math.log(1+Math.exp(a));
+	public static double softplus (double x) {
+		if (x>100) return x;
+		if (x<-100) return 0.0;
+		return Math.log(1+Math.exp(x));
 	}
 	
-	public static float tanh (float a) {
-		double ex=Math.exp(2*a);
+	public static float tanh (float x) {
+		double ex=Math.exp(2*x);
 		float df=(float)((ex-1)/(ex+1));
-		if (Float.isNaN(df)) return (a>0)?1:-1;
+		if (Float.isNaN(df)) return (x>0)?1:-1;
 		return df;
 	}
 	
-	public static double tanh (double a) {
-		double ex=Math.exp(2*a);
+	public static double tanh (double x) {
+		double ex=Math.exp(2*x);
 		double df=((ex-1)/(ex+1));
-		if (Double.isNaN(df)) return (a>0)?1:-1;
+		if (Double.isNaN(df)) return (x>0)?1:-1;
 		return df;
 	}
 	
-	public static double tanhScaled(double a) {
-		return 1.7159*tanh((2.0/3.0)*a);
+	public static double tanhScaled(double x) {
+		return 1.7159*tanh((2.0/3.0)*x);
 	}
 	
-	public static double tanhScaledDerivative(double a) {
-		double ta=tanh((2.0/3.0)*a);
+	public static double tanhScaledDerivative(double x) {
+		double ta=tanh((2.0/3.0)*x);
 		return (1.7159*(2.0/3.0))*(ta*(1-ta));
 	}
 	
-	public static float inverseSigmoid (float a) {
-		if (a>=1) return 800;
-		if (a<=0) return -800;
-		double ea=a/(1.0-a);
+	public static float inverseSigmoid (float y) {
+		if (y>=1) return 800;
+		if (y<=0) return -800;
+		double ea=y/(1.0-y);
 		return (float)Math.log(ea);
 	}
 	
-	public static float sigmoidDerivative (float a) {
-		float sa=sigmoid(a);
+	public static double inverseLogistic (double y) {
+		if (y>=1) return 800;
+		if (y<=0) return -800;
+		double ea=y/(1.0-y);
+		return Math.log(ea);
+	}
+	
+	public static float sigmoidDerivative (float x) {
+		float sa=sigmoid(x);
 		return sa*(1-sa);
 	}
 	
-	public static double sigmoidDerivative (double a) {
-		double sa=sigmoid(a);
+	public static double sigmoidDerivative (double x) {
+		return logisticDerivative(x);
+	}
+	
+	public static double logisticDerivative (double x) {
+		double sa=logistic(x);
 		return sa*(1-sa);
 	}
 	
-	public static float tanhDerivative (float a) {
-		float sa=tanh(a);
+	public static float tanhDerivative (float x) {
+		float sa=tanh(x);
 		return 1.0f-(sa*sa);
 	}
 	
 	
-	public static double tanhDerivative (double a) {
-		double sa=tanh(a);
+	public static double tanhDerivative (double x) {
+		double sa=tanh(x);
 		return 1.0-(sa*sa);
 	}
 	
@@ -353,36 +368,36 @@ public final class Maths {
 	}
 	
 	/** Round up to next integer */
-	public static int roundUp(double d) {
-		int i=(int) d;
-		return (i==d)?i:(i+1);
+	public static int roundUp(double x) {
+		int i=(int) x;
+		return (i==x)?i:(i+1);
 	}
 	
 	
 	
 	/** Round up to next integer */
-	public static int roundUp(Number d) {
-		return roundUp(d.doubleValue());
+	public static int roundUp(Number x) {
+		return roundUp(x.doubleValue());
 	}
 	
 	/** Round up to next integer */
-	public static int roundUp(float d) {
-		int i=(int) d;
-		return (i==d)?i:(i+1);
+	public static int roundUp(float x) {
+		int i=(int) x;
+		return (i==x)?i:(i+1);
 	}
 
 	/** Rounds down (integer floor) of a double value */	
-	public static int roundDown(double a) {
-		if (a>=0) return (int)a;
-		int x=(int)a;
-		return (a==x)?x:x-1;
+	public static int roundDown(double x) {
+		if (x>=0) return (int)x;
+		int r=(int)x;
+		return (x==r)?r:r-1;
 	}
 	
 	/** Round down to next smallest integer (towards negative infinity) */
-	public static int roundDown(float a) {
-		if (a>=0) return (int)a;
-		int x=(int)a;
-		return (a==x)?x:x-1;
+	public static int roundDown(float x) {
+		if (x>=0) return (int)x;
+		int r=(int)x;
+		return (x==r)?r:r-1;
 	}
 	
 	/**
@@ -430,8 +445,8 @@ public final class Maths {
 	}
 
 	/** Tests whether a value is near zero, to a default tolerance level */
-	public static boolean notNearZero(double d) {
-		return (d<-EPSILON)||(d>EPSILON);
+	public static boolean notNearZero(double x) {
+		return (x<-EPSILON)||(x>EPSILON);
 	}
 	
     /** Double mod function with fractional divisor */
@@ -442,9 +457,9 @@ public final class Maths {
 	}
 	
     /** Triangle wave with wavelength 1.0, and range 0.0 - 1.0 */
-	public static double triangleWave(double a) {
-		a-=Math.floor(a);
-		return (a<0.5)?a*2:(2-a*2);
+	public static double triangleWave(double x) {
+		x-=Math.floor(x);
+		return (x<0.5)?x*2:(2-x*2);
 	}
 
 	
