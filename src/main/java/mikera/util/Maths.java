@@ -9,14 +9,14 @@ package mikera.util;
  *
  */
 public final class Maths {
-	public static final double ROOT_TWO=(float)Math.sqrt(2);
-	public static final double ROOT_THREE=(float)Math.sqrt(3);
+	public static final double ROOT_TWO=Math.sqrt(2);
+	public static final double ROOT_THREE=Math.sqrt(3);
 	
 	/** mathematical constant e */
 	public static final double E=java.lang.Math.E;
 	
 	/** Mathematical constant Pi = 3.1415926... */
-	public static final double PI=(float)Math.PI;
+	public static final double PI=Math.PI;
 	public static final double TWO_PI=2.0*PI;
 
 	/** Mathematical constant Tau = 2 * Pi */
@@ -305,9 +305,20 @@ public final class Maths {
 		return sa*(1-sa);
 	}
 	
+	public static double sigmoidDerivative (double a) {
+		double sa=sigmoid(a);
+		return sa*(1-sa);
+	}
+	
 	public static float tanhDerivative (float a) {
 		float sa=tanh(a);
-		return 1-sa*sa;
+		return 1.0f-(sa*sa);
+	}
+	
+	
+	public static double tanhDerivative (double a) {
+		double sa=tanh(a);
+		return 1.0-(sa*sa);
 	}
 	
 
