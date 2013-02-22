@@ -247,17 +247,11 @@ public final class Maths {
 		return result;
 	}
 	
-	public static float sigmoid (float x) {
-		double ea=Math.exp(-x);
-		float df=(float)(1/(1.0f+ea));
-		if (Float.isNaN(df)) return (x>0)?1:0;
-		return df;
-	}
-	
-	public static double sigmoid (double x) {
-		return logistic(x);
-	}
-	
+	/**
+	 * Standard logistic function
+	 * @param x
+	 * @return
+	 */
 	public static double logistic (double x) {
 		double ea=Math.exp(-x);
 		double df=(1/(1.0f+ea));
@@ -294,27 +288,11 @@ public final class Maths {
 		return (1.7159*(2.0/3.0))*(ta*(1-ta));
 	}
 	
-	public static float inverseSigmoid (float y) {
-		if (y>=1) return 800;
-		if (y<=0) return -800;
-		double ea=y/(1.0-y);
-		return (float)Math.log(ea);
-	}
-	
 	public static double inverseLogistic (double y) {
 		if (y>=1) return 800;
 		if (y<=0) return -800;
 		double ea=y/(1.0-y);
 		return Math.log(ea);
-	}
-	
-	public static float sigmoidDerivative (float x) {
-		float sa=sigmoid(x);
-		return sa*(1-sa);
-	}
-	
-	public static double sigmoidDerivative (double x) {
-		return logisticDerivative(x);
 	}
 	
 	public static double logisticDerivative (double x) {

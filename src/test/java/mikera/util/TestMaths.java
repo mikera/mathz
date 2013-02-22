@@ -34,30 +34,30 @@ public class TestMaths {
 	}
 	
 	@Test public void testSigmoid() {
-		assertEquals(0.0f,Maths.sigmoid(-1000000),0.001f);
-		assertEquals(0.0f,Maths.sigmoid(-800),0.001f);
-		assertEquals(0.0f,Maths.sigmoid(-100),0.001f);
-		assertEquals(0.0f,Maths.sigmoid(-30),0.001f);
+		assertEquals(0.0f,Maths.logistic(-1000000),0.001f);
+		assertEquals(0.0f,Maths.logistic(-800),0.001f);
+		assertEquals(0.0f,Maths.logistic(-100),0.001f);
+		assertEquals(0.0f,Maths.logistic(-30),0.001f);
 		
-		assertEquals(1.0f,Maths.sigmoid(1000000),0.001f);
-		assertEquals(1.0f,Maths.sigmoid(800),0.001f);
-		assertEquals(1.0f,Maths.sigmoid(100),0.001f);
-		assertEquals(1.0f,Maths.sigmoid(30),0.001f);
+		assertEquals(1.0f,Maths.logistic(1000000),0.001f);
+		assertEquals(1.0f,Maths.logistic(800),0.001f);
+		assertEquals(1.0f,Maths.logistic(100),0.001f);
+		assertEquals(1.0f,Maths.logistic(30),0.001f);
 		
-		assertEquals(0.5f,Maths.sigmoid(0),0.001f);
+		assertEquals(0.5f,Maths.logistic(0),0.001f);
 
-		assertEquals(0.0f,Maths.sigmoid(Maths.inverseSigmoid(0.0f)),0.001f);
-		assertEquals(1.0f,Maths.sigmoid(Maths.inverseSigmoid(1.0f)),0.001f);
-		assertEquals(0.5f,Maths.sigmoid(Maths.inverseSigmoid(0.5f)),0.001f);
+		assertEquals(0.0f,Maths.logistic(Maths.inverseLogistic(0.0f)),0.001f);
+		assertEquals(1.0f,Maths.logistic(Maths.inverseLogistic(1.0f)),0.001f);
+		assertEquals(0.5f,Maths.logistic(Maths.inverseLogistic(0.5f)),0.001f);
 
-		assertEquals(0.0f,Maths.sigmoidDerivative(100),0.001f);
-		assertEquals(0.25f,Maths.sigmoidDerivative(0),0.001f);
-		assertEquals(0.0f,Maths.sigmoidDerivative(-100),0.001f);
+		assertEquals(0.0f,Maths.logisticDerivative(100),0.001f);
+		assertEquals(0.25f,Maths.logisticDerivative(0),0.001f);
+		assertEquals(0.0f,Maths.logisticDerivative(-100),0.001f);
 
 		
-		assertEquals(0.0f,Maths.inverseSigmoid(Maths.sigmoid(0.0f)),0.001f);
-		assertEquals(2.0f,Maths.inverseSigmoid(Maths.sigmoid(2.0f)),0.001f);
-		assertEquals(-2.0f,Maths.inverseSigmoid(Maths.sigmoid(-2.0f)),0.001f);
+		assertEquals(0.0f,Maths.inverseLogistic(Maths.logistic(0.0f)),0.001f);
+		assertEquals(2.0f,Maths.inverseLogistic(Maths.logistic(2.0f)),0.001f);
+		assertEquals(-2.0f,Maths.inverseLogistic(Maths.logistic(-2.0f)),0.001f);
 	}
 	
 	@Test public void testIntMod() {
