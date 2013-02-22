@@ -22,8 +22,12 @@ public class TestFloatMaths {
 
 		
 		assertEquals(2.0f,FloatMaths.mod(-8f, 10.0f),0.00001f);
-
-		
+	}
+	
+	@Test public void testTanh() {
+		assertEquals(1.0f,FloatMaths.tanh(1000000),0.001f);
+		assertEquals(-1.0f,FloatMaths.tanh(-1000000),0.001f);
+		assertEquals(0f,FloatMaths.tanh(0),0.001f);
 	}
 	
 	@Test public void testAbs() {

@@ -118,15 +118,6 @@ public final class Maths {
 		return (a==0) ? 0 : ( (a>0)?1:-1 );
 	}
 	
-	/**
-	 * Mike's fast integer sign algorithm
-	 * @param a
-	 * @return Sign of the given number (-1, 0 or 1)
-	 */
-	public static final int sign2(int a) {
-		return (a>>31)+((a>0)?1:0);
-	}
-	
 
 	
 	/** Return the sign of a long value */
@@ -247,17 +238,11 @@ public final class Maths {
 		return result;
 	}
 	
-	public static float sigmoid (float x) {
-		double ea=Math.exp(-x);
-		float df=(float)(1/(1.0f+ea));
-		if (Float.isNaN(df)) return (x>0)?1:0;
-		return df;
-	}
-	
-	public static double sigmoid (double x) {
-		return logistic(x);
-	}
-	
+	/**
+	 * Standard logistic function
+	 * @param x
+	 * @return
+	 */
 	public static double logistic (double x) {
 		double ea=Math.exp(-x);
 		double df=(1/(1.0f+ea));
@@ -271,34 +256,14 @@ public final class Maths {
 		return Math.log(1+Math.exp(x));
 	}
 	
-	public static float tanh (float x) {
-		double ex=Math.exp(2*x);
-		float df=(float)((ex-1)/(ex+1));
-		if (Float.isNaN(df)) return (x>0)?1:-1;
-		return df;
-	}
-	
-	public static double tanh (double x) {
-		double ex=Math.exp(2*x);
-		double df=((ex-1)/(ex+1));
-		if (Double.isNaN(df)) return (x>0)?1:-1;
-		return df;
-	}
-	
+
 	public static double tanhScaled(double x) {
-		return 1.7159*tanh((2.0/3.0)*x);
+		return 1.7159*Math.tanh((2.0/3.0)*x);
 	}
 	
 	public static double tanhScaledDerivative(double x) {
-		double ta=tanh((2.0/3.0)*x);
+		double ta=Math.tanh((2.0/3.0)*x);
 		return (1.7159*(2.0/3.0))*(ta*(1-ta));
-	}
-	
-	public static float inverseSigmoid (float y) {
-		if (y>=1) return 800;
-		if (y<=0) return -800;
-		double ea=y/(1.0-y);
-		return (float)Math.log(ea);
 	}
 	
 	public static double inverseLogistic (double y) {
@@ -308,28 +273,14 @@ public final class Maths {
 		return Math.log(ea);
 	}
 	
-	public static float sigmoidDerivative (float x) {
-		float sa=sigmoid(x);
-		return sa*(1-sa);
-	}
-	
-	public static double sigmoidDerivative (double x) {
-		return logisticDerivative(x);
-	}
-	
 	public static double logisticDerivative (double x) {
 		double sa=logistic(x);
 		return sa*(1-sa);
 	}
-	
-	public static float tanhDerivative (float x) {
-		float sa=tanh(x);
-		return 1.0f-(sa*sa);
-	}
-	
+
 	
 	public static double tanhDerivative (double x) {
-		double sa=tanh(x);
+		double sa=Math.tanh(x);
 		return 1.0-(sa*sa);
 	}
 	

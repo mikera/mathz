@@ -134,6 +134,19 @@ public final class FloatMaths {
 		return (float)Math.sin(a);
 	}
 	
+	/** float version of Math.tanh */
+	public static float tanh (float x) {
+		double ex=Math.exp(2*x);
+		float df=(float)((ex-1)/(ex+1));
+		if (Float.isNaN(df)) return (x>0)?1:-1;
+		return df;
+	}
+	
+	public static float tanhDerivative (float x) {
+		double sa=Math.tanh(x);
+		return 1.0f-(float)(sa*sa);
+	}
+	
 	/** Float-returning version of Math.cos */
 	public static float cos(float a) {
 		a =  a % ((float) Maths.TWO_PI);

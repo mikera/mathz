@@ -26,38 +26,31 @@ public class TestMaths {
 		assertEquals(0,Maths.modPower32Bit(2,320));
 	}
 	
-	@Test public void testTanh() {
-		assertEquals(1.0f,Maths.tanh(1000000),0.001f);
-		assertEquals(-1.0f,Maths.tanh(-1000000),0.001f);
-		assertEquals(0f,Maths.tanh(0),0.001f);
-	
-	}
-	
 	@Test public void testSigmoid() {
-		assertEquals(0.0f,Maths.sigmoid(-1000000),0.001f);
-		assertEquals(0.0f,Maths.sigmoid(-800),0.001f);
-		assertEquals(0.0f,Maths.sigmoid(-100),0.001f);
-		assertEquals(0.0f,Maths.sigmoid(-30),0.001f);
+		assertEquals(0.0f,Maths.logistic(-1000000),0.001f);
+		assertEquals(0.0f,Maths.logistic(-800),0.001f);
+		assertEquals(0.0f,Maths.logistic(-100),0.001f);
+		assertEquals(0.0f,Maths.logistic(-30),0.001f);
 		
-		assertEquals(1.0f,Maths.sigmoid(1000000),0.001f);
-		assertEquals(1.0f,Maths.sigmoid(800),0.001f);
-		assertEquals(1.0f,Maths.sigmoid(100),0.001f);
-		assertEquals(1.0f,Maths.sigmoid(30),0.001f);
+		assertEquals(1.0f,Maths.logistic(1000000),0.001f);
+		assertEquals(1.0f,Maths.logistic(800),0.001f);
+		assertEquals(1.0f,Maths.logistic(100),0.001f);
+		assertEquals(1.0f,Maths.logistic(30),0.001f);
 		
-		assertEquals(0.5f,Maths.sigmoid(0),0.001f);
+		assertEquals(0.5f,Maths.logistic(0),0.001f);
 
-		assertEquals(0.0f,Maths.sigmoid(Maths.inverseSigmoid(0.0f)),0.001f);
-		assertEquals(1.0f,Maths.sigmoid(Maths.inverseSigmoid(1.0f)),0.001f);
-		assertEquals(0.5f,Maths.sigmoid(Maths.inverseSigmoid(0.5f)),0.001f);
+		assertEquals(0.0f,Maths.logistic(Maths.inverseLogistic(0.0f)),0.001f);
+		assertEquals(1.0f,Maths.logistic(Maths.inverseLogistic(1.0f)),0.001f);
+		assertEquals(0.5f,Maths.logistic(Maths.inverseLogistic(0.5f)),0.001f);
 
-		assertEquals(0.0f,Maths.sigmoidDerivative(100),0.001f);
-		assertEquals(0.25f,Maths.sigmoidDerivative(0),0.001f);
-		assertEquals(0.0f,Maths.sigmoidDerivative(-100),0.001f);
+		assertEquals(0.0f,Maths.logisticDerivative(100),0.001f);
+		assertEquals(0.25f,Maths.logisticDerivative(0),0.001f);
+		assertEquals(0.0f,Maths.logisticDerivative(-100),0.001f);
 
 		
-		assertEquals(0.0f,Maths.inverseSigmoid(Maths.sigmoid(0.0f)),0.001f);
-		assertEquals(2.0f,Maths.inverseSigmoid(Maths.sigmoid(2.0f)),0.001f);
-		assertEquals(-2.0f,Maths.inverseSigmoid(Maths.sigmoid(-2.0f)),0.001f);
+		assertEquals(0.0f,Maths.inverseLogistic(Maths.logistic(0.0f)),0.001f);
+		assertEquals(2.0f,Maths.inverseLogistic(Maths.logistic(2.0f)),0.001f);
+		assertEquals(-2.0f,Maths.inverseLogistic(Maths.logistic(-2.0f)),0.001f);
 	}
 	
 	@Test public void testIntMod() {
@@ -78,10 +71,10 @@ public class TestMaths {
 	@Test public void testSign() {
 		for (int i=-100; i<100; i++) {
 			assertEquals((int)Math.signum(i),Maths.sign(i));
-			assertEquals((int)Math.signum(i),Maths.sign2(i));
+			assertEquals((int)Math.signum(i),AlternativeMaths.sign2(i));
 		}
 		assertEquals((int)Math.signum(Integer.MIN_VALUE),Maths.sign(Integer.MIN_VALUE));	
-		assertEquals((int)Math.signum(Integer.MIN_VALUE),Maths.sign2(Integer.MIN_VALUE));
+		assertEquals((int)Math.signum(Integer.MIN_VALUE),AlternativeMaths.sign2(Integer.MIN_VALUE));
 		
 	}
 	
