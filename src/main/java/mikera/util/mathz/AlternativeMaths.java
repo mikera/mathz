@@ -34,4 +34,15 @@ public class AlternativeMaths {
 		return df;
 	}
 	
+	/**
+	 * Mike's fast integer sign algorithm
+	 * @param a
+	 * @return Sign of the given number (-1, 0 or 1)
+	 */
+	public static final int sign2(int a) {
+		return (a>>31)+((a>0)?1:0);
+	}
+	
+
+	
 }

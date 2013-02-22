@@ -71,10 +71,10 @@ public class TestMaths {
 	@Test public void testSign() {
 		for (int i=-100; i<100; i++) {
 			assertEquals((int)Math.signum(i),Maths.sign(i));
-			assertEquals((int)Math.signum(i),Maths.sign2(i));
+			assertEquals((int)Math.signum(i),AlternativeMaths.sign2(i));
 		}
 		assertEquals((int)Math.signum(Integer.MIN_VALUE),Maths.sign(Integer.MIN_VALUE));	
-		assertEquals((int)Math.signum(Integer.MIN_VALUE),Maths.sign2(Integer.MIN_VALUE));
+		assertEquals((int)Math.signum(Integer.MIN_VALUE),AlternativeMaths.sign2(Integer.MIN_VALUE));
 		
 	}
 	
