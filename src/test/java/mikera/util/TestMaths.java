@@ -58,8 +58,6 @@ public class TestMaths {
 		assertEquals(2,Maths.mod(7, 5));
 		assertEquals(1,Maths.mod(-7, 8));
 		assertEquals(0,Maths.mod(10, 10));
-
-		
 	}
 	
 	@Test public void testDoubleMod() {
@@ -74,8 +72,7 @@ public class TestMaths {
 			assertEquals((int)Math.signum(i),AlternativeMaths.sign2(i));
 		}
 		assertEquals((int)Math.signum(Integer.MIN_VALUE),Maths.sign(Integer.MIN_VALUE));	
-		assertEquals((int)Math.signum(Integer.MIN_VALUE),AlternativeMaths.sign2(Integer.MIN_VALUE));
-		
+		assertEquals((int)Math.signum(Integer.MIN_VALUE),AlternativeMaths.sign2(Integer.MIN_VALUE));	
 	}
 	
 	@Test public void testMinMax() {
