@@ -32,9 +32,6 @@ public final class Maths {
 	public static double sqrt(double a) {
 		return Math.sqrt(a);
 	}
-
-	
-
 	
 	/**
 	 * Clamp a double value to an integer range
