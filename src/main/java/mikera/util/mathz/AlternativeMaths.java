@@ -26,4 +26,12 @@ public class AlternativeMaths {
 	public static int sign2fast(int a) {
 		return 1+(a>>31)+((a-1)>>31);
 	}
+	
+	public static double tanh (double x) {
+		double ex=Math.exp(2*x);
+		double df=((ex-1)/(ex+1));
+		if (Double.isNaN(df)) return (x>0)?1:-1;
+		return df;
+	}
+	
 }

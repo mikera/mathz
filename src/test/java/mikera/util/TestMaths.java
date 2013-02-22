@@ -26,13 +26,6 @@ public class TestMaths {
 		assertEquals(0,Maths.modPower32Bit(2,320));
 	}
 	
-	@Test public void testTanh() {
-		assertEquals(1.0f,Maths.tanh(1000000),0.001f);
-		assertEquals(-1.0f,Maths.tanh(-1000000),0.001f);
-		assertEquals(0f,Maths.tanh(0),0.001f);
-	
-	}
-	
 	@Test public void testSigmoid() {
 		assertEquals(0.0f,Maths.logistic(-1000000),0.001f);
 		assertEquals(0.0f,Maths.logistic(-800),0.001f);

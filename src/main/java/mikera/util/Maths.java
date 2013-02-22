@@ -265,26 +265,13 @@ public final class Maths {
 		return Math.log(1+Math.exp(x));
 	}
 	
-	public static float tanh (float x) {
-		double ex=Math.exp(2*x);
-		float df=(float)((ex-1)/(ex+1));
-		if (Float.isNaN(df)) return (x>0)?1:-1;
-		return df;
-	}
-	
-	public static double tanh (double x) {
-		double ex=Math.exp(2*x);
-		double df=((ex-1)/(ex+1));
-		if (Double.isNaN(df)) return (x>0)?1:-1;
-		return df;
-	}
-	
+
 	public static double tanhScaled(double x) {
-		return 1.7159*tanh((2.0/3.0)*x);
+		return 1.7159*Math.tanh((2.0/3.0)*x);
 	}
 	
 	public static double tanhScaledDerivative(double x) {
-		double ta=tanh((2.0/3.0)*x);
+		double ta=Math.tanh((2.0/3.0)*x);
 		return (1.7159*(2.0/3.0))*(ta*(1-ta));
 	}
 	
@@ -299,15 +286,10 @@ public final class Maths {
 		double sa=logistic(x);
 		return sa*(1-sa);
 	}
-	
-	public static float tanhDerivative (float x) {
-		float sa=tanh(x);
-		return 1.0f-(sa*sa);
-	}
-	
+
 	
 	public static double tanhDerivative (double x) {
-		double sa=tanh(x);
+		double sa=Math.tanh(x);
 		return 1.0-(sa*sa);
 	}
 	
