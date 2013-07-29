@@ -1,8 +1,11 @@
 mathz
 =====
 
-Library of helpful maths functions and utilities for Java.
+Library of assorted helpful maths functions and utilities for Java.
 
+ - Some alternative specialised versions of java.util.Math functions
+ - TAU constant (see http://tauday.com/tau-manifesto)
+ - Various statistical functions not in standard Java
 
 ### Status
 
