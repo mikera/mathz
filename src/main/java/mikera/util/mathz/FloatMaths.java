@@ -83,6 +83,11 @@ public final class FloatMaths {
 		return x*x;
 	}
 	
+	/** float square root */
+	public static float sqrt(float a) {
+		return (float) Math.sqrt(a);
+	}
+	
 	/**
 	 * Interesting way to approximate a square root.... however seems to be slower than standard Math.sqrt() approach
 	 * @param x
