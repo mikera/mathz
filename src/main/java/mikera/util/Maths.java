@@ -140,6 +140,18 @@ public final class Maths {
 	}
 	
 	/**
+	 * Long modulus function
+	 * @param n number
+	 * @param d divisor
+	 * @return
+	 */
+	public static long mod(long number, long divisor) {
+		long r= (number%divisor);
+		if (r<0) r+=divisor;
+		return r;
+	}
+	
+	/**
 	 * Detects the number of times that boundary is passed when adding increase to base
 	 * @param increase
 	 * @param boundary
