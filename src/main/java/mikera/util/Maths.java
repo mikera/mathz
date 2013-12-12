@@ -80,7 +80,7 @@ public final class Maths {
 	/**
 	 * Return the middle value of 3 numbers
 	 * 
-	 * Can use faster "bound" method if first and last parameters are in order
+	 * Can use faster "bound" method if parameters 2 and 3 are known to be in order
 	 */
 	public static float middle(float a, float b, float c) {
 		if (a<b) {
