@@ -26,14 +26,6 @@
 		</license>
 	</licenses>
 
-	<repositories>
-		<repository>
-			<id>clojars.org</id>
-			<name>Clojars repository</name>
-			<url>https://clojars.org/repo</url>
-		</repository>
-	</repositories>
-
 	<dependencies>
 		<dependency>
 			<groupId>junit</groupId>
@@ -44,7 +36,7 @@
 		<dependency>
 			<groupId>net.mikera</groupId>
 			<artifactId>randomz</artifactId>
-			<version>0.2.0</version>
+			<version>0.3.0</version>
 		</dependency>
 		<dependency>
 			<groupId>com.google.caliper</groupId>
