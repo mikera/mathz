@@ -12,13 +12,12 @@ package mikera.util;
 import org.junit.Test;
 
 import static mikera.util.Unsigned.*;
-import static junit.framework.Assert.assertEquals;
+import static org.junit.Assert.assertEquals;
 
 /**
  * @author peter.lawrey
  */
 public class TestUnsigned {
-	@SuppressWarnings("deprecation")
 	@Test
 	public void testAdd() {
 		assertEquals((byte) 250, add((byte) 200, (byte) 50));
@@ -31,7 +30,6 @@ public class TestUnsigned {
 				asString(add(Long.MAX_VALUE, Long.MAX_VALUE)));
 	}
 
-	@SuppressWarnings("deprecation")
 	@Test
 	public void testMinus() {
 		assertEquals((byte) 200, minus((byte) 250, (byte) 50));
